@@ -1,21 +1,15 @@
-import {
-  useLoaderData,
-  Link,
-  useNavigate,
-  useRevalidator,
-} from "react-router-dom";
+import { useLoaderData, Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa6";
 import { toast } from "react-toastify";
 
 const JobPage = ({ DeleteJob }) => {
   const navigate = useNavigate();
   const { job } = useLoaderData();
-  const revalidator = useRevalidator();
 
   const deleteJob = () => {
     DeleteJob(job.id);
     toast.success("Successfully Delete the job");
-    revalidator.revalidate();
+
     navigate("/jobs");
   };
   return (
