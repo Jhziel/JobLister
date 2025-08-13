@@ -35,7 +35,7 @@ const EditJobPage = ({ UpdateJob }) => {
     };
 
     UpdateJob(editedJob);
-    toast.success("Successfully create a New Job");
+    toast.success("Successfully create a Update Job");
     navigate("/jobs");
   };
 
