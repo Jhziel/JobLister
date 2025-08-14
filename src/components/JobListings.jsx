@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Job from "./Job";
 import Spinners from "./Spinners";
 
 const JobListings = ({ isHome = false }) => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+  const location = useLocation();
 
   useEffect(() => {
     const API_URL = import.meta.env.VITE_API_URL;
@@ -22,7 +23,7 @@ const JobListings = ({ isHome = false }) => {
       }
     };
     getJobs();
-  }, ); // location.key changes every navigation
+  }, [location.state]); // location.key changes every navigation
 
   const latestJob = isHome ? jobs.slice(0, 3) : jobs;
 
