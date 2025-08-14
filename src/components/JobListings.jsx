@@ -6,10 +6,10 @@ import Spinners from "./Spinners";
 const JobListings = ({ isHome = false }) => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_URL = import.meta.env.VITE_API_URL;
   const location = useLocation();
 
   useEffect(() => {
+    const API_URL = import.meta.env.VITE_API_URL;
     const getJobs = async () => {
       setLoading(true);
       try {
