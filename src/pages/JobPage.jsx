@@ -10,7 +10,7 @@ const JobPage = ({ DeleteJob }) => {
     DeleteJob(job.id);
     toast.success("Successfully Delete the job");
 
-    navigate("/jobs");
+    navigate("/jobs", { state: { refresh: true } });
   };
   return (
     <>
