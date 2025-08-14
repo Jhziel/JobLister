@@ -25,7 +25,7 @@ const JobListings = ({ isHome = false }) => {
       }
     };
     getJobs();
-  }, [API_URL, location.key]); // location.key changes every navigation
+  }, [API_URL, location.pathname]); // location.key changes every navigation
 
   const latestJob = isHome ? jobs.slice(0, 3) : jobs;
 
