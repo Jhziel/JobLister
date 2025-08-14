@@ -13,9 +13,7 @@ const JobListings = ({ isHome = false }) => {
     const getJobs = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`${API_URL}/job`, {
-          cache: "no-store", // prevent browser cache
-        });
+        const response = await fetch(`${API_URL}/job`);
         const data = await response.json();
         setJobs(data.jobs);
       } catch (error) {
@@ -25,7 +23,7 @@ const JobListings = ({ isHome = false }) => {
       }
     };
     getJobs();
-  }, [API_URL, location.pathname]); // location.key changes every navigation
+  }, [location.pathname]); // location.key changes every navigation
 
   const latestJob = isHome ? jobs.slice(0, 3) : jobs;
 
