@@ -23,7 +23,7 @@ const JobListings = ({ isHome = false }) => {
       }
     };
     getJobs();
-  }, [location.pathname]); // location.key changes every navigation
+  }, [location.state]); // location.key changes every navigation
 
   const latestJob = isHome ? jobs.slice(0, 3) : jobs;
 

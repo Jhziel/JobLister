@@ -32,7 +32,7 @@ const AddJobPage = ({ AddJobs }) => {
 
     AddJobs(newJob);
     toast.success("Successfully create a New Job");
-    navigate("/jobs");
+    navigate("/jobs", { state: { refresh: true } });
   };
 
   return (
